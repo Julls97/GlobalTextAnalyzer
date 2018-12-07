@@ -6,7 +6,7 @@ import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -56,7 +56,7 @@ public class HelloWorld {
 		for (Character c : text.toLowerCase().toCharArray())
 			collect.put(c, collect.containsKey(c) ? ( collect.get(c) + 1 ) : 1);
 		
-		ArrayList<Map.Entry<Character, Integer>> array = new ArrayList<>();
+		ArrayList<Entry<Character, Integer>> array = new ArrayList<>();
 		array.addAll(collect.entrySet());
 		return array.toArray(new Pair[0]);
 	}
@@ -67,7 +67,7 @@ public class HelloWorld {
 		for (String c : text.toLowerCase().split(" "))
 			collect.put(c, collect.containsKey(c) ? ( collect.get(c) + 1 ) : 1);
 		
-		ArrayList<Map.Entry<String, Integer>> array = new ArrayList<>();
+		ArrayList<Entry<String, Integer>> array = new ArrayList<>();
 		array.addAll(collect.entrySet());
 		return array.toArray(new Pair[0]);
 	}
